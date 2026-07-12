@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.route_tables : {
       for k2, v2 in coalesce(v1.routes, {}) :
       "${k1}/${k2}" => merge(v2, {
-        route_table_name = module.route_tables.route_tables["${k1}"].name
+        route_table_name = module.route_tables.route_tables_name["${k1}"]
       })
     }
   ]...)
