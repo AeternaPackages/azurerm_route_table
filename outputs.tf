@@ -1,4 +1,9 @@
 # --- azurerm_route_table ---
+output "route_tables_id" {
+  description = "Map of id values across all route_tables, keyed the same as var.route_tables"
+  value       = module.route_tables.route_tables_id
+}
+
 output "route_tables_bgp_route_propagation_enabled" {
   description = "Map of bgp_route_propagation_enabled values across all route_tables, keyed the same as var.route_tables"
   value       = module.route_tables.route_tables_bgp_route_propagation_enabled
@@ -35,6 +40,11 @@ output "route_tables_tags" {
 }
 
 # --- azurerm_route ---
+output "routes_id" {
+  description = "Map of id values across all routes, keyed the same as var.routes"
+  value       = module.routes.routes_id
+}
+
 output "routes_address_prefix" {
   description = "Map of address_prefix values across all routes, keyed the same as var.routes"
   value       = module.routes.routes_address_prefix
