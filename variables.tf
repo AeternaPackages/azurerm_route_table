@@ -23,13 +23,13 @@ EOT
     location                      = string
     name                          = string
     resource_group_name           = string
-    bgp_route_propagation_enabled = optional(bool) # Default: true
+    bgp_route_propagation_enabled = optional(bool)
     tags                          = optional(map(string))
     route = optional(list(object({
-      address_prefix         = string
-      name                   = string
+      address_prefix         = optional(string)
+      name                   = optional(string)
       next_hop_in_ip_address = optional(string)
-      next_hop_type          = string
+      next_hop_type          = optional(string)
     })))
     routes = optional(map(object({
       address_prefix         = string
