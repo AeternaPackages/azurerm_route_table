@@ -12,12 +12,12 @@ locals {
 }
 
 module "route_tables" {
-  source       = "git::https://github.com/AeternaModules/azurerm_route_table.git?ref=v5.0.0"
+  source       = "git::https://github.com/AeternaModules/azurerm_route_table.git?ref=v5.0.1"
   route_tables = local.route_tables
 }
 
 module "routes" {
-  source     = "git::https://github.com/AeternaModules/azurerm_route.git?ref=v5.0.0"
+  source     = "git::https://github.com/AeternaModules/azurerm_route.git?ref=v5.0.1"
   routes     = local.routes
   depends_on = [module.route_tables]
 }
